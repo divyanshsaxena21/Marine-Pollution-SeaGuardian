@@ -355,7 +355,7 @@ header button a:hover {
 
 
 main{
-    margin: 0 2% 0 2%;
+    margin: 0 2% 2% 2%;
 }
 
 
@@ -458,7 +458,7 @@ footer {
     align-items: start;
     flex: 2 0 140px;
     width: 100%;
-    gap: 16px;
+    gap: 135px;
     padding: 24px 8px 16px 8px;
     margin: 0 auto;
     border-top: 1px solid var(--text-gray);

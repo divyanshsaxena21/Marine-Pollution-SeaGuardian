@@ -17,9 +17,28 @@ html {
 body {
     position: relative;
     margin: 0;
-    background: url(../assets/main1.gif) no-repeat;
-    background-size: cover;
 }
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the video stays behind other content */
+    overflow: hidden; /* Prevent video from overflowing its container */
+  }
+  
+  .background-video video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 
 /* header section */
@@ -152,7 +171,7 @@ header button a:hover {
     border-radius: 1em;
 }
 
-.login{
+.login {
     margin-left: 15px;
 }
 
@@ -185,11 +204,11 @@ header button a:hover {
         0 0 100px #365486;
 }
 
-.container{
+.container {
     margin-top: 300px;
 }
 
-.panel-left{
+.panel-left {
     margin-left: 120px;
     width: 35%;
     padding: 40px;
@@ -198,24 +217,24 @@ header button a:hover {
     background-color: rgba(255, 255, 255, 0.699);
 }
 
-.panel-left h1{
+.panel-left h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: bold;
     font-size: 50px;
     padding-bottom: 30px;
 }
 
-.panel-left h3{
+.panel-left h3 {
     font-size: 25px;
 }
 
-.mid{
+.mid {
     padding: 0 0;
     margin-top: 30px;
     background-color: #EEF5FF;
 }
 
-.mid h3{
+.mid h3 {
     margin-left: 100px;
     padding: 3% 3%;
     font-weight: bold;
@@ -223,13 +242,14 @@ header button a:hover {
     color: #365486;
     text-align: center;
 }
-.mid h1{
+
+.mid h1 {
     text-align: center;
     font-size: 150px;
     color: #164863;
 }
 
-.history{
+.history {
     display: flex;
     align-items: center;
     margin-left: 120px;
@@ -239,22 +259,22 @@ header button a:hover {
     border-radius: 30px;
 }
 
-.his-p{
+.his-p {
     color: #365486;
     margin-left: 50px;
     font-size: 27px;
     font-weight: bolder;
 }
 
-.his-p h4{
+.his-p h4 {
     font-size: 20px;
 }
 
-.his-p h2 a{
+.his-p h2 a {
     color: #365486;
 }
 
-.his-p p{
+.his-p p {
     color: #365486;
     margin-top: 20px;
     margin-bottom: 50px;
@@ -262,7 +282,7 @@ header button a:hover {
     font-weight: bolder;
 }
 
-.his-img img{
+.his-img img {
     height: 300px;
 }
 
@@ -287,14 +307,18 @@ header button a:hover {
 }
 
 /*? footer reset */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
 /*? footer reset */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -347,7 +371,7 @@ footer {
     outline: none;
 }
 
-.footer-subscribe button:hover{
+.footer-subscribe button:hover {
     background-color: rgb(255, 255, 255);
     color: black;
 }
@@ -361,7 +385,7 @@ footer {
     align-items: start;
     flex: 2 0 140px;
     width: 100%;
-    gap: 16px;
+    gap: 135px;
     padding: 24px 8px 16px 8px;
     margin: 0 auto;
     border-top: 1px solid var(--text-gray);
@@ -378,7 +402,7 @@ footer {
     text-decoration: none;
 }
 
-.footer-columns ul a:hover{
+.footer-columns ul a:hover {
     text-decoration: underline;
 }
 
@@ -397,7 +421,7 @@ footer {
     margin: 0 auto;
 }
 
-.footer-columns > section {
+.footer-columns>section {
     min-width: 150px;
 }
 
@@ -411,16 +435,14 @@ footer {
     gap: 8px;
 }
 
-.footer-logo img{
+.footer-logo img {
     height: 210px;
 }
 
 /* footer bottom */
 .footer-bottom {
     text-align: center;
-    border-top: 1px solid var(
-        --text-gray
-    );
+    border-top: 1px solid var(--text-gray);
     margin-top: 48px;
     display: flex;
     align-items: center;
@@ -431,16 +453,16 @@ footer {
     justify-content: space-between;
 }
 
-.footer-bottom > small {
+.footer-bottom>small {
     font-size: 16px;
     margin: 0 4px;
 }
 
-.footer-headline > h2 {
+.footer-headline>h2 {
     margin: 0px;
 }
 
-.footer-headline > p {
+.footer-headline>p {
     margin: 12px 0px;
 }
 
@@ -482,11 +504,11 @@ footer {
 }
 
 .parallax-image-03 {
-    background-image: url("../assets/img3.jpg");
+    background-image: url("../assets/donate.jpg");
 }
 
-.sec{
-    margin: 25px;
+.sec {
+    margin: 25px 150px;
 }
 
 .slide-img {
@@ -495,24 +517,34 @@ footer {
     padding: 30px;
 }
 
-section > h2 {
+section>h2 {
     text-transform: uppercase;
 }
 
-.about-us-h2{
+.about-us-h2 {
     font-size: 30px;
 }
 
-.about-us-p{
+.about-us-p {
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-.about-us-p li{
+.about-us-p li {
     font-size: 20px;
 }
 
-.about-us-p a{
-    background-color: black;
+.about-us-btn {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 128, 255, 0.2);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px 10px;
+    color: black;
+}
+
+.about-us-btn:hover {
+    background-color: rgb(0, 128, 255);
     color: white;
 }

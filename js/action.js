@@ -118,10 +118,40 @@ function showLocationOnMap() {
         }
     });
 }
-
+function gatherFormData() {
+    const form = document.getElementById('report-form');
+  
+    const userName = form.elements['userName'].value;
+    const date = form.elements['date'].value;
+    const address = form.elements['address'].value;
+    const contact = form.elements['contact'].value;
+    const email = form.elements['email'].value;
+    const pollutionLocation = form.elements['location-pollution'].value;
+    const latitude = form.elements['latitude'].value;
+    const longitude = form.elements['longitude'].value;
+    const pollutionType = form.elements['pollution'].value;
+    const areaOfPollution = form.elements['pollution-area'].value;
+    const polybagsPresent = form.elements['polybags-present'].value;
+  
+    return {
+      userName,
+      date,
+      address,
+      contact,
+      email,
+      pollutionLocation,
+      latitude,
+      longitude,
+      pollutionType,
+      areaOfPollution,
+      polybagsPresent
+    };
+  }
+  
 function submitForm() {
-    showLocationOnMap();
+     alert('Form submitted!');
     const formData = gatherFormData();
+    showLocationOnMap();
     saveFormData(formData);
-    alert('Form submitted!');
-}
+  }
+  

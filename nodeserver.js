@@ -1,66 +1,13 @@
 const express = require('express');
 const fs = require('fs');
-const { Storage } = require('@google-cloud/storage');
 const path = require('path');
 const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-const multer = require('multer');
-
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); 
-
 
 const app = express();
 const port = 4000;
 
-
-// Set up GCS client
-const storage = new Storage({
-  keyFilename: '',
-  projectId: '',
-});
-
-// Set your GCS bucket name
-const bucketName = 'incident-reports-action';
-const bucket = storage.bucket(bucketName);
-
-// Use Multer with GCS storage
-const multerGCS = multer({
-  storage: multer.memoryStorage(),
-});
-
-// Example route to handle file upload
-app.post('/upload', multerGCS.single('image'), async (req, res) => {
-  const userName = req.body.userName || 'defaultUser';
-  const location = {
-    latitude: req.body.latitude,
-    longitude: req.body.longitude,
-  };
-
-  const folderPath = `${userName}/`;
-  const filePath = `${folderPath}coordinates.txt`;
-
-  // Write coordinates to the file in GCS
-  const file = bucket.file(filePath);
-  await file.save(`Latitude: ${location.latitude}, Longitude: ${location.longitude}`);
-
-  // Upload the image file to GCS
-  const imageFile = bucket.file(`${folderPath}${req.file.originalname}`);
-  const stream = imageFile.createWriteStream();
-  stream.end(req.file.buffer);
-
-  // Handle the stream events and send response
-  stream.on('finish', () => {
-    res.send('Image and Location submitted successfully.');
-  });
-  stream.on('error', (err) => {
-    console.error('Error uploading image to GCS:', err);
-    res.status(500).send('Internal Server Error');
-  });
-});
-
-
+app.use(express.json());
+app.use(express.static('public')); 
 
 //public
 app.get('/', (req, res) => {
@@ -77,12 +24,54 @@ app.get('/latest', (req, res) => {
 app.get('/ourProgram', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'ourProgram.html'));
 });
-///js
 
-
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+app.get('/ngo-register', (req, res) => {
+    res.sendFile(path.join(__dirname,'public',  'ngo-register.html'));
 });
+
+app.get('/reset-password', (req, res) => {
+    res.sendFile(path.join(__dirname,'public',  'reset-pass.html'));
+});
+app.get('/otp-verify', (req, res) => {
+    res.sendFile(path.join(__dirname,'public',  'otp-verify.html'));
+});
+app.get('/assets/email.svg', (req, res) => {
+    res.sendFile(path.join(__dirname,  'assets', 'email.svg'));
+});
+app.get('/assets/google.svg', (req, res) => {
+  res.sendFile(path.join(__dirname,  'assets', 'google.svg'));
+});
+
+app.get('/css/login.css', (req, res) => {
+  res.sendFile(path.join(__dirname, 'css', 'login.css'));
+});
+app.get('/css/otp.css', (req, res) => {
+    res.sendFile(path.join(__dirname, 'css', 'otp.css'));
+  });
+
+app.get('/js/login.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'js', 'login.js'));
+});
+
+app.get('/js/firebase.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'js', 'firebase.js'));
+});
+app.get('/js/actionstorage.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'js', 'actionstorage.js'));
+  });
+app.get('/js/data.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'js', 'data.js'));
+  });
+  app.get('/js/otp-send.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'js', 'otp-send.js'));
+});
+
+//js
+
+app.get('/profile', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'profile.html'));
+});
+
 
 
 app.get('/js/2purify.min.js', (req, res) => {
@@ -101,6 +90,9 @@ app.get('/js/ourProgram.js', (req, res) => {
 //css
 app.get('/css/blog.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'css', 'blog.css'));
+});
+app.get('/css/profile.css', (req, res) => {
+    res.sendFile(path.join(__dirname, 'css', 'profile.css'));
 });
 
 app.get('/css/donate.css', (req, res) => {
@@ -322,4 +314,6 @@ function sendOtpEmail(userEmail, otp) {
   });
 }
 
-
+app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+});

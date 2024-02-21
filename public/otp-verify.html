@@ -22,7 +22,7 @@
                     <input type="text" maxlength="1" class="otp-box" id="otp4" oninput="moveToNext(this)" required>
                 </div>
                 <div>
-                    <button class="bubbly-button1">Verify OTP</button>
+                    <button class="bubbly-button1" onclick="navigateToHome()">Verify OTP</button>
                 </div>
                 <div class="my-form__row3">
                     <span>Did you not receive the OTP?</span>
@@ -48,23 +48,7 @@
             }
         }
 
-        function verifyOTP() {
-            const enteredOTP = document.getElementById('otp1').value +
-                document.getElementById('otp2').value +
-                document.getElementById('otp3').value +
-                document.getElementById('otp4').value;
-
-            // Check if entered OTP matches the expected OTP
-            if (enteredOTP === expectedOTP) {
-                // Redirect to Google.com
-                window.location.href = 'https://www.google.com';
-            } else {
-                // Display an alert for invalid OTP
-                alert('Invalid OTP. Please try again.');
-            }
-
-            return false; // Prevent form submission for testing purposes
-        }
+        
     </script>
     <script src="../js/login.js"></script>
     <script src="../js/otp-send.js"></script>

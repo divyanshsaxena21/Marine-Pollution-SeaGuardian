@@ -1,5 +1,3 @@
-
-
 document.querySelector('#submitBtn').addEventListener('click', requestOtp);
 document.querySelector('#resendotp').addEventListener('click',requestOtp)
 function requestOtp() {
@@ -9,7 +7,7 @@ function requestOtp() {
 
 
     // Send request to the server
-    fetch('http://localhost:5000/otp-verify', {
+    fetch('http://localhost:4000/otp-verify', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -25,3 +23,6 @@ function requestOtp() {
     });
 }
 
+function navigateToHome() {
+    window.location.href = 'home.html';
+  }
