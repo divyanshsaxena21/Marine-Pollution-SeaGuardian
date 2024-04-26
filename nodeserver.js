@@ -179,31 +179,31 @@ app.get("/assets/github.svg", (req, res) => {
 });
 app.use(
     "/assets/pollution_2",
-    express.static(path.join(__dirname, "assets", "pollution_2"))
+    express.static(path.join(__dirname, "assets", "pollution_2.png"))
 );
 app.use(
     "/assets/confine_top",
-    express.static(path.join(__dirname, "assets", "confine_top"))
+    express.static(path.join(__dirname, "assets", "confine_top.png"))
 );
 app.use(
     "/assets/confine_1",
-    express.static(path.join(__dirname, "assets", "confine_1"))
+    express.static(path.join(__dirname, "assets", "confine_1.png"))
 );
 app.use(
     "/assets/confine_2",
-    express.static(path.join(__dirname, "assets", "confine_2"))
+    express.static(path.join(__dirname, "assets", "confine_2.png"))
 );
 app.use(
     "/assets/confine_3",
-    express.static(path.join(__dirname, "assets", "confine_3"))
+    express.static(path.join(__dirname, "assets", "confine_3.png"))
 );
 app.use(
     "/assets/confine_4.png",
     express.static(path.join(__dirname, "assets", "confine_4.png"))
 );
 app.use(
-    "/assets/confine_5",
-    express.static(path.join(__dirname, "assets", "confine_5"))
+    "/assets/confine_5.png",
+    express.static(path.join(__dirname, "assets", "confine_5.png"))
 );
 app.use(
     "/assets/demolition-waste-scaled.jpg",
@@ -265,43 +265,43 @@ app.use(
 );
 app.use(
     "/assets/whaling",
-    express.static(path.join(__dirname, "assets", "whaling"))
+    express.static(path.join(__dirname, "assets", "whaling.png.png"))
 );
 app.use(
     "/assets/whaling 2",
-    express.static(path.join(__dirname, "assets", "whaling 2"))
+    express.static(path.join(__dirname, "assets", "whaling 2.png.png"))
 );
 app.use(
     "/assets/whaling 3",
-    express.static(path.join(__dirname, "assets", "whaling 3"))
+    express.static(path.join(__dirname, "assets", "whaling 3.png.png"))
 );
 app.use(
     "/assets/whaling 4",
-    express.static(path.join(__dirname, "assets", "whaling 4"))
+    express.static(path.join(__dirname, "assets", "whaling 4.png.png"))
 );
 app.use(
     "/assets/endangeeerd2",
-    express.static(path.join(__dirname, "assets", "endangeeerd2"))
+    express.static(path.join(__dirname, "assets", "endangeeerd2.png.png"))
 );
 app.use(
     "/assets/endangered_top",
-    express.static(path.join(__dirname, "assets", "endangered_top"))
+    express.static(path.join(__dirname, "assets", "endangered_top.png.png"))
 );
 app.use(
     "/assets/endangered4",
-    express.static(path.join(__dirname, "assets", "endangered4"))
+    express.static(path.join(__dirname, "assets", "endangered4.png.png"))
 );
 app.use(
     "/assets/endangered5",
-    express.static(path.join(__dirname, "assets", "endangered5"))
+    express.static(path.join(__dirname, "assets", "endangered5.png.png"))
 );
 app.use(
     "/assets/extinct",
-    express.static(path.join(__dirname, "assets", "extinct"))
+    express.static(path.join(__dirname, "assets", "extinct.png.png"))
 );
 app.use(
     "/assets/fishery_1",
-    express.static(path.join(__dirname, "assets", "fishery_1"))
+    express.static(path.join(__dirname, "assets", "fishery_1.png.png"))
 );
 app.use(
     "/assets/fishery_2.jpg",
@@ -309,15 +309,15 @@ app.use(
 );
 app.use(
     "/assets/fishery_3",
-    express.static(path.join(__dirname, "assets", "fishery_3"))
+    express.static(path.join(__dirname, "assets", "fishery_3.png.png"))
 );
 app.use(
     "/assets/fishery_4",
-    express.static(path.join(__dirname, "assets", "fishery_4"))
+    express.static(path.join(__dirname, "assets", "fishery_4.png.png"))
 );
 app.use(
     "/assets/fishery_5",
-    express.static(path.join(__dirname, "assets", "fishery_5"))
+    express.static(path.join(__dirname, "assets", "fishery_5.png.png"))
 );
 app.use(
     "/assets/fishery_top.gif",
@@ -347,23 +347,23 @@ app.use(
 );
 app.use(
     "/assets/pollution_3",
-    express.static(path.join(__dirname, "assets", "pollution_3"))
+    express.static(path.join(__dirname, "assets", "pollution_3.png.png"))
 );
 app.use(
     "/assets/pollution_4",
-    express.static(path.join(__dirname, "assets", "pollution_4"))
+    express.static(path.join(__dirname, "assets", "pollution_4.png.png"))
 );
 app.use(
     "/assets/pollution_5",
-    express.static(path.join(__dirname, "assets", "pollution_5"))
+    express.static(path.join(__dirname, "assets", "pollution_5.png.png"))
 );
 app.use(
     "/assets/pollution_6",
-    express.static(path.join(__dirname, "assets", "pollution_6"))
+    express.static(path.join(__dirname, "assets", "pollution_6.png.png"))
 );
 app.use(
     "/assets/pollution_top",
-    express.static(path.join(__dirname, "assets", "pollution_top"))
+    express.static(path.join(__dirname, "assets", "pollution_top.png.png"))
 );
 app.use(
     "/assets/Screenshot 2024-04-22 155354.png",
@@ -402,20 +402,20 @@ app.use(
     )
 );
 app.use(
-    "/assets/shark_2",
-    express.static(path.join(__dirname, "assets", "shark_2"))
+    "/assets/shark_2.png",
+    express.static(path.join(__dirname, "assets", "shark_2.png"))
 );
 app.use(
-    "/assets/shark_3",
-    express.static(path.join(__dirname, "assets", "shark_3"))
+    "/assets/shark_3.png",
+    express.static(path.join(__dirname, "assets", "shark_3.png"))
 );
 app.use(
-    "/assets/shark_4",
-    express.static(path.join(__dirname, "assets", "shark_4"))
+    "/assets/shark_4.png",
+    express.static(path.join(__dirname, "assets", "shark_4.png"))
 );
 app.use(
-    "/assets/shark_5",
-    express.static(path.join(__dirname, "assets", "shark_5"))
+    "/assets/shark_5.png",
+    express.static(path.join(__dirname, "assets", "shark_5.png"))
 );
 
 //login
