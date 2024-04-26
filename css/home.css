@@ -560,7 +560,16 @@ section>h2 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+.link2{
+    padding: 5px;
+    color:#000000 ;
+    display: inline-block;
+    line-height: 10px;
+    border-radius: 1px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 @media screen and (max-width: 320px) {
     
